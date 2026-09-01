@@ -6,13 +6,13 @@ const ASSETS = [
   './js/app.js',
   './manifest.json',
   './favicon.ico',
-  './icons/icon-192.png',
-  './icons/icon-512.png',
-  './icons/icon-maskable-192.png',
-  './icons/icon-maskable-512.png',
-  './icons/apple-touch-icon.png',
-  './icons/favicon-32.png',
-  './icons/favicon-16.png'
+  './Icons/icon-192.png',
+  './Icons/icon-512.png',
+  './Icons/icon-maskable-192.png',
+  './Icons/icon-maskable-512.png',
+  './Icons/apple-touch-icon.png',
+  './Icons/favicon-32.png',
+  './Icons/favicon-16.png'
 ];
 
 self.addEventListener('install', (event) => {
