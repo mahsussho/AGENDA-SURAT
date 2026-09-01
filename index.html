@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Buku Agenda Surat</title>
+<meta name="theme-color" content="#2E5E3E" />
+<link rel="manifest" href="manifest.json" />
+<link rel="apple-touch-icon" href="icons/icon-192.png" />
+<link rel="icon" href="icons/icon-192.png" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="cover">
+  <h1>Buku Agenda Surat</h1>
+  <div class="subtitle">SD Negeri 2 Jombok</div>
+</header>
+
+<div class="toolbar">
+  <input type="search" id="search" placeholder="Cari nomor atau perihal surat..." />
+  <button class="btn-add" id="btn-add">+ Catat</button>
+</div>
+
+<main>
+  <table class="ledger" id="ledger-table">
+    <thead>
+      <tr>
+        <th class="col-no">No</th>
+        <th class="col-tgl">Tanggal</th>
+        <th>Nomor Surat</th>
+        <th>Perihal</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <div class="empty-state" id="empty-state">
+    <div class="mark">&mdash;</div>
+    <p>Belum ada surat tercatat.<br>Ketuk "+ Catat" untuk menambah entri pertama.</p>
+  </div>
+
+  <p class="footer-note">
+    <a href="#" id="btn-export" style="color:inherit;">Ekspor ke CSV</a>
+    &nbsp;&middot;&nbsp; Data tersimpan di perangkat ini
+  </p>
+</main>
+
+<button class="fab" id="fab" aria-label="Tambah catatan">+</button>
+
+<div class="sheet-backdrop" id="sheet-backdrop"></div>
+<div class="sheet" id="sheet" role="dialog" aria-labelledby="sheet-title">
+  <div class="sheet-handle"></div>
+  <h2 id="sheet-title">Catatan Surat Baru</h2>
+  <form id="entry-form">
+    <div class="field">
+      <label for="f-tanggal">Tanggal</label>
+      <input type="date" id="f-tanggal" required />
+    </div>
+    <div class="field">
+      <label for="f-nomor">Nomor Surat</label>
+      <input type="text" id="f-nomor" placeholder="mis. 400.3.5.5/070/406.009.03.119/2026" autocomplete="off" />
+    </div>
+    <div class="field">
+      <label for="f-perihal">Perihal / Keterangan</label>
+      <textarea id="f-perihal" placeholder="mis. Perubahan BOS"></textarea>
+    </div>
+    <div class="sheet-actions">
+      <button type="button" class="btn-cancel" id="btn-cancel">Batal</button>
+      <button type="submit" class="btn-save">Simpan</button>
+    </div>
+    <button type="button" class="btn-delete" id="btn-delete" style="display:none;">Hapus catatan ini</button>
+  </form>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
